@@ -1,5 +1,14 @@
 import path from "path";
 
 export default function (req, res) {
-  res.sendFile(path.join(__dirname, "jobs.html"));
+  res.json([
+    {
+      position: "Gardener",
+      employer: "Garden Center 1",
+    },
+    {
+      position: "Gardener",
+      employer: "Garden Center 2",
+    },
+  ]);
 }
