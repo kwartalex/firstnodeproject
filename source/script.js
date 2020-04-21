@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import apiRoutes from "./crud-shop-api";
 import path from "path";
 import indexController from "./index";
 import jobsController from "./jobs";
@@ -9,6 +10,8 @@ import saveFormController from "./formSave";
 
 const server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
+
+server.use('/shop-api-db', apiRoutes);
 
 server.get("/", indexController);
 server.get("/jobs", jobsController);
